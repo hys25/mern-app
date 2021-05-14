@@ -1,10 +1,10 @@
-const {Router} = require('express');
-const bcrypt = require('bcrypt');
-const config = require('config');
-const jwt = require('jsonwebtoken');
-const {check, validationResult} = require('express-validator');
-const User = require('../models/User');
-const router = Router();
+const {Router} = require('express')
+const bcrypt = require('bcrypt')
+const config = require('config')
+const jwt = require('jsonwebtoken')
+const {check, validationResult} = require('express-validator')
+const User = require('../models/User')
+const router = Router()
 
 // /api/auth/register
 router.post(
@@ -90,4 +90,4 @@ router.post(
   }
 })
 
-module.exports = router;
+module.exports = router
