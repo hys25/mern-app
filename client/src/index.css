@@ -1,1 +1,32 @@
-@import "~materialize-css/dist/css/materialize.min.css"
+@import "~materialize-css/dist/css/materialize.min.css";
+
+.card-title {
+  margin-bottom: 30px !important;
+}
+
+input.auth-input {
+  margin-top: 10px !important;
+  height: 37px !important;
+  padding-left: 5px !important;
+  color: #263238 !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid #fff !important;
+  box-shadow: 0 1px 0 0 #fff !important;
+}
+
+input.auth-input:focus {
+  border-bottom: 1px solid #263238 !important;
+  box-shadow: 0 1px 0 0 #263238 !important;
+}
+
+input.auth-input + label {
+  color: #ffffff !important;
+}
+
+input.auth-input:focus + label {
+  color: #263238 !important;
+}
+
+.sign-in {
+  margin-right: 16px;
+}
