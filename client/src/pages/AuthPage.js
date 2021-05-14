@@ -1,6 +1,26 @@
 import "materialize-css";
+import {useState} from 'react'
+import {useHttp} from '../hooks/http.hook'
 
 export const AuthPage = () => {
+  const {loading, error, request} = useHttp()
+
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  })
+
+  const changeHandler = event => {
+    setForm({...form, [event.target.name]: event.target.value})
+  }
+
+  const registerHandler = async() => {
+    try {
+      const data = await request('/api/auth/register', 'POST', {...form})
+      console.log('data', data)
+    } catch (e) {}
+  }
+
   return (
     <div className="row">
       <div className="col s6 offset-s3">
@@ -12,6 +32,7 @@ export const AuthPage = () => {
 
               <div className="input-field">
                 <input
+                  onChange={changeHandler}
                   className="auth-input"
                   placeholder="Enter email..."
                   id="email"
@@ -22,6 +43,7 @@ export const AuthPage = () => {
               </div>
               <div className="input-field">
                 <input
+                  onChange={changeHandler}
                   className="auth-input"
                   placeholder="Enter password..."
                   id="password"
@@ -34,8 +56,19 @@ export const AuthPage = () => {
             </div>
           </div>
           <div className="card-action">
-            <button className="btn blue-grey darken-2 sign-in">Sign in</button>
-            <button className="btn blue-grey lighten-5 black-text">Registration</button>
+            <button
+              className="btn blue-grey darken-2 sign-in"
+              disabled={loading}
+            >
+              Sign in
+            </button>
+            <button
+              className="btn blue-grey lighten-5 black-text"
+              onClick={registerHandler}
+              disabled={loading}
+            >
+              Registration
+            </button>
           </div>
         </div>
       </div>
