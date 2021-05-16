@@ -1,5 +1,5 @@
 {
   "port": 5000,
   "jwtSecret": "mern",
-  "mongoUri": "mongodb+srv://halyna:12345@cluster0.4oj8s.mongodb.net/app?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://halyna:12345hys@cluster0.4oj8s.mongodb.net/app?retryWrites=true&w=majority"
 }

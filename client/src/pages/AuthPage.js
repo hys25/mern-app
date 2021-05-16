@@ -1,7 +1,8 @@
 import "materialize-css";
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {useHttp} from '../hooks/http.hook'
 import {useMessage} from '../hooks/message.hook'
+import {AuthContext} from '../context/AuthContext'
 
 export const AuthPage = () => {
   const auth = useContext(AuthContext)
@@ -18,18 +19,22 @@ export const AuthPage = () => {
     clearError()
   }, [error, message, clearError])
 
+  useEffect(() => {
+    window.M.updateTextFields()
+  }, [])
+
   const changeHandler = event => {
     setForm({...form, [event.target.name]: event.target.value})
   }
 
-  const registerHandler = async() => {
+  const registerHandler = async () => {
     try {
       const data = await request('/api/auth/register', 'POST', {...form})
       message(data.message)
     } catch (e) {}
   }
 
-  const loginHandler = async() => {
+  const loginHandler = async () => {
     try {
       const data = await request('/api/auth/login', 'POST', {...form})
       auth.login(data.token, data.userId)
