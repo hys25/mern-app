@@ -34,3 +34,7 @@ input.auth-input:focus + label {
 .sign-in {
   margin-right: 16px;
 }
+
+.link-field {
+  margin-top: 20px;
+}

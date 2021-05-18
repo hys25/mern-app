@@ -53,6 +53,7 @@ export const AuthPage = () => {
               <div className="input-field">
                 <input
                   onChange={changeHandler}
+                  value={form.email}
                   className="auth-input"
                   placeholder="Enter email..."
                   id="email"
@@ -64,6 +65,7 @@ export const AuthPage = () => {
               <div className="input-field">
                 <input
                   onChange={changeHandler}
+                  value={form.password}
                   className="auth-input"
                   placeholder="Enter password..."
                   id="password"
