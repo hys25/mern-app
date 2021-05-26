@@ -1,8 +1,9 @@
 import "materialize-css"
 import {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import {AuthContext} from "../context/AuthContext";
+import {AuthContext} from "../context/AuthContext"
 import {Loader} from "../components/Loader"
+inport {LinkCard} from "../components/LinkCard"
 
 export const DetailPage = () => {
   const {token} = useContext(AuthContext)
@@ -30,7 +31,7 @@ export const DetailPage = () => {
 
   return (
     <>
-      { !loading && link && <LinkCard /> }
+      { !loading && link && <LinkCard link={link} /> }
     </>
   )
 }
