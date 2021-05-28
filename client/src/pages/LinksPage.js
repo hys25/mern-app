@@ -2,7 +2,8 @@ import {useState} from 'react'
 import "materialize-css";
 import {useHttp} from "../hooks/http.hook";
 import {Loader} from "../components/Loader";
-import {LinkCard} from "../components/LinkCard";
+import {LinksList} from "../components/LinksList";
+
 
 export const LinksPage = () => {
   const [links, setLinks] = useState([])
